@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-[#060606] text-[#f5f5f5];
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: #e8002d; color: #fff; }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #111; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #e8002d; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-red hover:bg-brand-red-dark
+           text-white font-bold uppercase tracking-wider
+           text-sm px-8 py-4 rounded-none
+           transition-all duration-200
+           hover:-translate-y-px hover:shadow-[0_8px_30px_rgba(232,0,45,0.35)]
+           active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           border border-white/20 hover:border-white
+           text-white font-semibold uppercase tracking-wider
+           text-sm px-8 py-4
+           transition-all duration-200
+           hover:bg-white/5
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .section-tag {
+    @apply text-[10px] font-bold tracking-[4px] text-brand-red uppercase;
+  }
+
+  .section-title {
+    @apply font-display text-4xl md:text-6xl tracking-wider leading-none;
+  }
+
+  .product-card-hover {
+    @apply transition-all duration-300
+           hover:border-brand-red/40
+           hover:shadow-[0_16px_48px_rgba(232,0,45,0.15)];
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-white/5 rounded;
+  }
+}
