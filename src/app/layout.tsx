@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Inter, Bebas_Neue } from 'next/font/google'
 import { Toaster } from 'sonner'
 import { Navbar } from '@/components/layout/Navbar'
 import { CartDrawer } from '@/components/cart/CartDrawer'
@@ -12,8 +11,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const bebas = localFont({
-  src: '../../public/fonts/BebasNeue-Regular.ttf',
+const bebas = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
   variable: '--font-bebas',
   display: 'swap',
 })
